@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/static/css/main.42035802.css",
+    "main.js": "/static/js/main.d1e04df8.js",
+    "static/css/107.386fed27.chunk.css": "/static/css/107.386fed27.chunk.css",
+    "static/js/107.e3e77a85.chunk.js": "/static/js/107.e3e77a85.chunk.js",
+    "static/css/29.843e019c.chunk.css": "/static/css/29.843e019c.chunk.css",
+    "static/js/29.7bd48252.chunk.js": "/static/js/29.7bd48252.chunk.js",
+    "static/css/203.843e019c.chunk.css": "/static/css/203.843e019c.chunk.css",
+    "static/js/203.a1224648.chunk.js": "/static/js/203.a1224648.chunk.js",
+    "static/css/77.164eb01c.chunk.css": "/static/css/77.164eb01c.chunk.css",
+    "static/js/77.c7a30ab1.chunk.js": "/static/js/77.c7a30ab1.chunk.js",
+    "static/js/126.f7083b3f.chunk.js": "/static/js/126.f7083b3f.chunk.js",
+    "static/js/919.310ecff0.chunk.js": "/static/js/919.310ecff0.chunk.js",
+    "static/js/856.988a9c3f.chunk.js": "/static/js/856.988a9c3f.chunk.js",
+    "static/media/Nunito-VariableFont_wght.ttf": "/static/media/Nunito-VariableFont_wght.e832734fe3e30d1edb43.ttf",
+    "static/media/parthenon.jpg": "/static/media/parthenon.1e4c2bed8be03d8c3c3b.jpg",
+    "static/media/logo.svg": "/static/media/logo.4196a73b4e1e68a0f9d27b66bc472bf9.svg",
+    "static/media/default-photo.svg": "/static/media/default-photo.361fb6f937f05b88ea286aa152849da2.svg",
+    "index.html": "/index.html",
+    "main.42035802.css.map": "/static/css/main.42035802.css.map",
+    "main.d1e04df8.js.map": "/static/js/main.d1e04df8.js.map",
+    "107.386fed27.chunk.css.map": "/static/css/107.386fed27.chunk.css.map",
+    "107.e3e77a85.chunk.js.map": "/static/js/107.e3e77a85.chunk.js.map",
+    "29.843e019c.chunk.css.map": "/static/css/29.843e019c.chunk.css.map",
+    "29.7bd48252.chunk.js.map": "/static/js/29.7bd48252.chunk.js.map",
+    "203.843e019c.chunk.css.map": "/static/css/203.843e019c.chunk.css.map",
+    "203.a1224648.chunk.js.map": "/static/js/203.a1224648.chunk.js.map",
+    "77.164eb01c.chunk.css.map": "/static/css/77.164eb01c.chunk.css.map",
+    "77.c7a30ab1.chunk.js.map": "/static/js/77.c7a30ab1.chunk.js.map",
+    "126.f7083b3f.chunk.js.map": "/static/js/126.f7083b3f.chunk.js.map",
+    "919.310ecff0.chunk.js.map": "/static/js/919.310ecff0.chunk.js.map",
+    "856.988a9c3f.chunk.js.map": "/static/js/856.988a9c3f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42035802.css",
+    "static/js/main.d1e04df8.js"
+  ]
+}

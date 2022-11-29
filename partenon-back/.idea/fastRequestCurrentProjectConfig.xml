@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentProjectConfig">
+    <option name="enableEnv" value="http://localhost:8001/api/auth/main/signup" />
+    <option name="enableProject" value="facturador-masmas" />
+  </component>
+</project>
