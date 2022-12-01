@@ -3,7 +3,9 @@
 </h1>
 
 ## ℹ️ Introduction
-Este repositorio se encuentra una API para museos virtuales, proyecto desarrollado para la Olimpiada de Programación 2022. En este caso este es una version modificada de la API que hice para la olimpiada, la diferencia principal se encuentra en que en lugar de utilizar Spring-Web hice la migracion a Spwing-WebFlux libreria para utilizar programacion reactiva. Para mas informacion sobre Programacion [Reactiva en Spring](https://www2.deloitte.com/es/es/pages/technology/articles/la-programacion-reactiva-en-spring.html)
+Este repositorio se encuentra una API para museos virtuales, proyecto desarrollado para la Olimpiada de Programación 2022. En este caso este es una version modificada de la API que hice para la olimpiada, para mas informacion sobre este proyecto en [conjunto-solucion](https://github.com/conjunto-solucion/partenon).
+
+La diferencia principal se encuentra en que en lugar de utilizar Spring-Web hice la migracion a Spwing-WebFlux libreria para utilizar programacion reactiva. Para mas informacion sobre Programacion [Reactiva en Spring](https://www2.deloitte.com/es/es/pages/technology/articles/la-programacion-reactiva-en-spring.html)
 
 ## 🏁 Antes de iniciar:
   * `1.` Instalar Java 17: `SITIO OFICIAL:` [OpenJDK 17](https://jdk.java.net/archive)
