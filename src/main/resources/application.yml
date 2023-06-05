@@ -1,0 +1,75 @@
+---
+#Configuracion del Servidor
+enableLoggingRequestDetails: false
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+#Configuracion del log
+logging:
+  level:
+    root: INFO
+    web: DEBUG
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+  pattern:
+    dateformat: HH:mm:ss
+
+#Suprimir el banner de Spring
+spring:
+  devtools:
+    add-properties: false
+  mvc:
+    pathmatch:
+      matching-strategy: "path-pattern-parser"
+  main:
+    banner-mode: off
+  #Configuracion de MySQL DataSource y JPA
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/partenon_db?useSSL=true&useTimezone=true
+    username: root
+    tomcat:
+      max-wait: 280000
+      max-active: 50
+      max-idle: 20
+      min-idle: 15
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+      database: MYSQL
+      database-platform: org.hibernate.dialect.MySQL5Dialect
+      show-sql: true
+      open-in-view: false
+      properties:
+        hibernate:
+          dialect:
+            storage_engine: innodb
+          format_sql: true
+  #Configuraciones de email
+  mail:
+    host: localhost
+    port: 1025
+    username: marcoslopezdev18@gmail.com
+    password: scbqvqyyfvkxbqjr
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+jwt:
+  secret: secret
+  expired: 14400000
+...
+
+
