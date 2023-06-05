@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class LoginQuery implements Query {
-    private String usernameOrEmail;
-    private String password;
+public final class LoginQuery implements Query {
+    private final String usernameOrEmail;
+    private final String password;
 }

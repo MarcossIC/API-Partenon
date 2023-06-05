@@ -5,10 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Value;
 
-@Value
+@Data
 @Builder
-public  class KeysApiModel implements Response {
-    private  String museumId;
-    private  String accessToken;
-    private  String refreshToken;
+public final class KeysApiModel implements Response {
+    private final String museumId;
+    private final String accessToken;
+    private final String refreshToken;
 }

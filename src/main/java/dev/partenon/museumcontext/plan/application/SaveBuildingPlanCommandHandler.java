@@ -1,7 +1,7 @@
 package dev.partenon.museumcontext.plan.application;
 
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import dev.partenon.museumcontext.plan.doamin.MuseumPlan;
 import dev.partenon.museumcontext.plan.doamin.SaveBuildingPlanCommand;
 import lombok.AllArgsConstructor;

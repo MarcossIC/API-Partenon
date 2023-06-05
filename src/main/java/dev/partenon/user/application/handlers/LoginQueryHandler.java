@@ -18,6 +18,12 @@ public class LoginQueryHandler implements QueryHandler<LoginQuery, KeysApiModel>
     private final CredentialService service;
     private final UserMapperPort mapper;
 
+    /**
+     * Maneja la consulta para generar las llaves para usar la API
+     *
+     * @param query Datos de un usuario autorizado en la API
+     * @return Modelo con los datos necesarios para las operacion
+     */
     @Override
     public KeysApiModel handle(LoginQuery query) throws Exception {
         var res = service.generateCredentials(query.getUsernameOrEmail(), query.getPassword());

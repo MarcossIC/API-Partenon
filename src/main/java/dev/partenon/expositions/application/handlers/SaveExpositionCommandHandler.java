@@ -4,7 +4,7 @@ import dev.partenon.expositions.application.ExpositionRepository;
 import dev.partenon.expositions.domain.Expositions;
 import dev.partenon.expositions.domain.SaveExpositionCommand;
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

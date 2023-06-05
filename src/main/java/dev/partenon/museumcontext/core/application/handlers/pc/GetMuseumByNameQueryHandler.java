@@ -3,7 +3,7 @@ package dev.partenon.museumcontext.core.application.handlers.pc;
 import dev.partenon.global.domain.abstractcomponents.query.QueryHandler;
 import dev.partenon.global.domain.model.Page;
 import dev.partenon.global.domain.model.PagedResponse;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import dev.partenon.museumcontext.core.doamin.models.MuseumProjection;
 import dev.partenon.museumcontext.core.doamin.query.PagingByNameQuery;
 import org.springframework.beans.factory.annotation.Autowired;

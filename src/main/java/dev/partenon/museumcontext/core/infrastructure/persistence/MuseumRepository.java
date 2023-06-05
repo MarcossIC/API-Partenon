@@ -1,4 +1,4 @@
-package dev.partenon.museumcontext.core.application;
+package dev.partenon.museumcontext.core.infrastructure.persistence;
 
 import dev.partenon.museumcontext.core.doamin.Museum;
 import org.springframework.data.domain.Pageable;

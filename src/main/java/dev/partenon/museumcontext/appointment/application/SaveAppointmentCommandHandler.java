@@ -5,7 +5,7 @@ import dev.partenon.global.domain.abstractcomponents.event.EventBus;
 import dev.partenon.museumcontext.appointment.domain.Appointment;
 import dev.partenon.museumcontext.appointment.domain.SaveAppointmentCommand;
 import dev.partenon.museumcontext.appointment.domain.SendEmailEvent;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

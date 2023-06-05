@@ -3,7 +3,7 @@ package dev.partenon.museumcontext.banner.application;
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
 import dev.partenon.museumcontext.banner.doamin.MuseumBanner;
 import dev.partenon.museumcontext.banner.doamin.SaveBannerCommand;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

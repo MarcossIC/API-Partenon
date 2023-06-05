@@ -9,12 +9,13 @@ public abstract class UserServicePort {
     @Autowired
     protected UserRepository repository;
 
-    public abstract void save();
+    public abstract void save(User user);
 
-    public abstract User retrieveUserBy(String username) throws EntityNotFoundException;
+    public abstract User retrieveUserByUsername(String username);
+    public abstract User retrieveUserByEmail(String email);
 
     public abstract User retrieveUserForSome(String username, String email) throws EntityNotFoundException;
-
+//
     public abstract Long retrieveMuseumId(String username);
 
 }

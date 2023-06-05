@@ -6,36 +6,38 @@ import dev.partenon.user.domain.User;
 import dev.partenon.user.domain.ports.UserServicePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserService extends UserServicePort {
 
     private AbstractJWT jwt;
 
     @Override
-    public void save() {
-
+    public void save(User user) {
+        this.repository.save(user);
     }
 
     @Override
-    public User retrieveUserBy(String username) throws EntityNotFoundException {
+    public User retrieveUserByUsername(String username)  {
         Optional<User> user = this.repository.findByUsername(username);
-        if (user.isEmpty()) {
-            throw new EntityNotFoundException("User", username);
-        }
-        return user.get();
+
+        return user.orElse(null);
+    }
+    @Override
+    public User retrieveUserByEmail(String email)  {
+        Optional<User> user = this.repository.findByEmail(email);
+
+        return user.orElse(null);
     }
 
     @Override
     public User retrieveUserForSome(String username, String email) throws EntityNotFoundException {
         Optional<User> user = this.repository.findByUsernameOrEmail(username, email);
-        if (user.isEmpty()) {
-            throw new EntityNotFoundException("User", username);
-        }
-
-        return user.get();
+        return user.orElse(null);
     }
 
     @Override

@@ -1,15 +1,19 @@
 package dev.partenon.user.application;
 
-import dev.partenon.museumcontext.core.doamin.SaveMuseumAndUserCommand;
+import dev.partenon.museumcontext.core.doamin.Museum;
+import dev.partenon.user.domain.RegisterCommand;
 import dev.partenon.security.domain.AbstractJWT;
 import dev.partenon.user.domain.User;
 import dev.partenon.user.domain.model.response.KeysApiModel;
 import dev.partenon.user.domain.model.response.MuseumIdModel;
 import dev.partenon.user.domain.ports.UserMapperPort;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
+@Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserMapper implements UserMapperPort {
     private final AbstractJWT jwt;
@@ -45,12 +49,22 @@ public class UserMapper implements UserMapperPort {
      * @param command
      * @return
      */
-    public User mapUser(SaveMuseumAndUserCommand command) {
-        return User.builder()
-                .email(command.getEmail())
-                .password(passwordEncoder.encode(command.getPassword()))
-                .username(command.getUsername())
-                .build();
+    public User mapUser(RegisterCommand command) {
+        var user = new User();
+        user.setEmail(command.getEmail());
+        String password = passwordEncoder.encode(command.getPassword());
+        user.setPassword(password);
+        user.setUsername(command.getUsername());
+
+        var museum = new Museum();
+        museum.setMuseumName(StringUtils.stripAccents(command.getMuseumName()));
+        museum.setProvince(command.getProvince());
+        museum.setCity(command.getCity());
+        museum.setStreet(command.getStreet());
+        museum.setAddressNumber(command.getAddressNumber());
+        museum.setUser(user);
+
+        return user;
     }
 
 }

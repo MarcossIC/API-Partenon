@@ -1,7 +1,7 @@
 package dev.partenon.museumcontext.openinghours.application;
 
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import dev.partenon.museumcontext.openinghours.doamin.OpeningHours;
 import dev.partenon.museumcontext.openinghours.doamin.SaveOpeningHoursCommand;
 import lombok.AllArgsConstructor;

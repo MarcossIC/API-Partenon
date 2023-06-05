@@ -10,6 +10,7 @@ import dev.partenon.museumcontext.description.doamin.MuseumDescription;
 import dev.partenon.museumcontext.openinghours.doamin.OpeningHours;
 import dev.partenon.museumcontext.plan.doamin.MuseumPlan;
 import dev.partenon.museumcontext.tours.domain.entity.MuseumTour;
+import dev.partenon.user.domain.RegisterCommand;
 import dev.partenon.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -49,7 +50,7 @@ public final class Museum implements Serializable, Response {
         this.museumId = museumId;
     }
 
-    public static Museum create(SaveMuseumAndUserCommand command, PasswordEncoder passwordEncoder) {
+    public static Museum create(RegisterCommand command, PasswordEncoder passwordEncoder) {
         var museum = new Museum();
         museum.setMuseumName(StringUtils.stripAccents(command.getMuseumName()));
         museum.setProvince(command.getProvince());

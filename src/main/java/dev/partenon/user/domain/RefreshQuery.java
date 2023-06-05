@@ -6,6 +6,6 @@ import lombok.Data;
 
 @Data
 @Builder
-public class RefreshQuery implements Query {
-    private String bearerToken;
+public final class RefreshQuery implements Query {
+    private final String bearerToken;
 }

@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @Data
 @Builder
-public class LoginUserRestModel {
+public final class LoginUserRestModel {
     @NotNull
     private String usernameOrEmail;
     @NotNull

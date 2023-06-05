@@ -17,6 +17,7 @@ public final class UserRestModel {
     @Size(min = 2, max = 20)
     private String username;
     @NotEmpty
+    @Size(min = 14, max = 128)
     private String email;
     @Size(min = 4, max = 20)
     private String password;
@@ -25,11 +26,15 @@ public final class UserRestModel {
     @Size(min = 2, max = 20)
     private String museumName;
     @NotEmpty
+    @Size(min = 2, max = 20)
     private String province;
     @NotEmpty
+    @Size(min = 2, max = 20)
     private String city;
     @NotEmpty
+    @Size(min = 2, max = 20)
     private String street;
     @NotEmpty
+    @Size(min = 2, max = 20)
     private String addressNumber;
 }

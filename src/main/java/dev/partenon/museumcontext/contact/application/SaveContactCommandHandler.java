@@ -3,7 +3,7 @@ package dev.partenon.museumcontext.contact.application;
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
 import dev.partenon.museumcontext.contact.doamin.SaveContactCommand;
 import dev.partenon.museumcontext.contact.doamin.entity.MuseumContact;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

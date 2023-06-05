@@ -19,8 +19,9 @@ import java.util.Optional;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class InitQueryHandler implements QueryHandler<InitQuery, MuseumIdModel> {
     private final AbstractJWT jwtProvider;
-    private final UserServicePort service;
     private final UserMapperPort mapper;
+    private final UserServicePort service;
+
 
     /**
      * Recupera el ID del museo del usuario al iniciar el sitio.

@@ -6,6 +6,6 @@ import lombok.Data;
 
 @Data
 @Builder
-public class InitQuery implements Query {
-    private String bearerToken;
+public final class InitQuery implements Query {
+    private final String bearerToken;
 }

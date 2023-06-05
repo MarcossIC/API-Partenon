@@ -1,7 +1,7 @@
 package dev.partenon.museumcontext.tours.application;
 
 import dev.partenon.global.domain.abstractcomponents.command.CommandHandler;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import dev.partenon.museumcontext.tours.domain.SaveTourCommand;
 import dev.partenon.museumcontext.tours.domain.entity.MuseumTour;
 import lombok.AllArgsConstructor;

@@ -1,7 +1,7 @@
 package dev.partenon.museumcontext.core.application.handlers.mobil;
 
 import dev.partenon.global.domain.abstractcomponents.query.QueryHandler;
-import dev.partenon.museumcontext.core.application.MuseumRepository;
+import dev.partenon.museumcontext.core.infrastructure.persistence.MuseumRepository;
 import dev.partenon.museumcontext.core.doamin.models.MobilMuseumProjection;
 import dev.partenon.museumcontext.core.doamin.query.MobileGetQuery;
 import org.springframework.beans.factory.annotation.Autowired;
