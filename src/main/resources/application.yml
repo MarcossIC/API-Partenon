@@ -24,15 +24,12 @@ logging:
 spring:
   devtools:
     add-properties: false
-  mvc:
-    pathmatch:
-      matching-strategy: "path-pattern-parser"
   main:
     banner-mode: off
   #Configuracion de MySQL DataSource y JPA
   datasource:
-    password: root
-    url: jdbc:mysql://localhost:3306/partenon_db?useSSL=true&useTimezone=true
+    password: admin
+    url: jdbc:mysql://localhost:3306/partenon_db?useSSL=true&useTimezone=true&serverTimezone=UTC
     username: root
     tomcat:
       max-wait: 280000
@@ -41,15 +38,14 @@ spring:
       min-idle: 15
     driver-class-name: com.mysql.cj.jdbc.Driver
     jpa:
-      database: MYSQL
-      database-platform: org.hibernate.dialect.MySQL5Dialect
       show-sql: true
-      open-in-view: false
-      properties:
-        hibernate:
-          dialect:
-            storage_engine: innodb
-          format_sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        #Dialecto que usa Hibernate para las querys
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        #Muestra el SQL ejecutado en consola en Columna
+        format_sql: true
   #Configuraciones de email
   mail:
     host: localhost

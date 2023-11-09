@@ -1,7 +1,7 @@
 package dev.partenon.global.infrastructure.adapters;
 
-import dev.partenon.global.domain.abstractcomponents.command.CommandNotRegisteredError;
-import dev.partenon.global.domain.abstractcomponents.query.*;
+import dev.partenon.global.domain.ports.command.CommandNotRegisteredError;
+import dev.partenon.global.domain.ports.query.*;
 import dev.partenon.global.infrastructure.ActionBusUtil;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

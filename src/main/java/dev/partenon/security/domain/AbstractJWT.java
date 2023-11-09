@@ -1,50 +1,72 @@
 package dev.partenon.security.domain;
 
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.interfaces.DecodedJWT;
-import dev.partenon.user.domain.User;
-import org.springframework.util.StringUtils;
+import java.util.Date;
+import java.util.Map;
 
-public abstract class AbstractJWT {
+public interface AbstractJWT<T> {
 
-    public abstract String createAccessToken(User user, String url);
+    /**
+     * Crea un token JWT con los datos del Usuario
+     *
+     * @param userDetails Datos del usuario que crea el token
+     * @return Token JWT
+     */
+    String generateToken(T userDetails, TokenType type);
 
-    public abstract Algorithm signKey();
+    /**
+     * Crea un token los datos del Usuario mas otros detalles
+     *
+     * @param user        Datos del usuario que crea el token
+     * @param extraClaims Detalles extra para el token
+     * @return Token JWT
+     */
+    String generateToken(T user, final TokenType type, Map<String, Object> extraClaims);
 
-    public abstract String createRefreshToken(User user);
+    /**
+     * Recupera una claim especifica del token
+     *
+     * @param token     Token JWT
+     * @param claimName Nombre de la claim que desea recuperar
+     * @param type      Tipo de dato de la claim
+     * @param <S>       Cambia segun el tipo de dato de la claim
+     */
+    <S> S extractClaim(String token, String claimName, Class<S> type);
 
-    public abstract DecodedJWT decoderToken(String token);
+    /**
+     * Verifica si la claim que deseas se encuentra en el token
+     *
+     * @param token     Token JWT
+     * @param claimName Nombre de la claim
+     */
+    Boolean hasClaim(String token, String claimName);
 
-    public abstract String getUsername(String token);
+    /**
+     * Recupera la credencial principal del usuario que creo el token
+     * (En nuestro caso Email)
+     *
+     * @param token Token JWT
+     */
+    String extractSubject(String token);
 
-    public abstract String getUserId(String token);
+    /**
+     * Recupera la fecha de caducidad del token
+     *
+     * @param token Token JWT
+     */
+    Date extractExpired(String token);
 
     /**
      * Verifica que el token sea valido
      *
-     * @param token Token JWT
-     * @return Devuelve true si es valido, false si no
+     * @param token       Token JWT
+     * @param userDetails Usuario que pertenece el token
      */
-    public Boolean validateContentToken(String token) {
-        var isValid = true;
-        try {
-            decoderToken(token);//Si arroja una excepcion no es valido
-        } catch (Exception e) {
-            isValid = false;
-        }
-        return isValid;
-    }
+    void isTokenValid(String token, T userDetails);
 
-    public String getToken(String auth) {
-        var stripedToken = auth.split(" ");
-        return stripedToken[1];
-    }
-
-    public Boolean validateBearerToken(String auth) {
-        //Veridica que no este vacio y empiece en Bearer
-        var isValid = (StringUtils.hasText(auth) && auth.startsWith("Bearer "));
-        //Verifica que al separarlo tenga dos posiciones
-        isValid = (auth.split(" ").length == 2);
-        return isValid;
-    }
+    /**
+     * Verifica si el token ha caducado
+     *
+     * @param token Token JWT
+     */
+    Boolean isTokenExpired(String token);
 }

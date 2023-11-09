@@ -1,9 +1,9 @@
 package dev.partenon.global.infrastructure.adapters;
 
-import dev.partenon.global.domain.abstractcomponents.event.Event;
-import dev.partenon.global.domain.abstractcomponents.event.EventBus;
-import dev.partenon.global.domain.abstractcomponents.event.EventHandler;
-import dev.partenon.global.domain.abstractcomponents.event.EventNotRegisteredError;
+import dev.partenon.global.domain.ports.event.Event;
+import dev.partenon.global.domain.ports.event.EventBus;
+import dev.partenon.global.domain.ports.event.EventHandler;
+import dev.partenon.global.domain.ports.event.EventNotRegisteredError;
 import dev.partenon.global.infrastructure.ActionBusUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
@@ -50,7 +50,7 @@ public class CustomEventBus implements EventBus {
      * @throws Exception
      */
     @Override
-    public <T> T handle(Event<T> event) throws Exception {
+    public <T> T execute(Event<T> event) throws Exception {
         if (!handlers.containsKey(event.getClass())) {
             throw new EventNotRegisteredError(event.getClass());
         }
